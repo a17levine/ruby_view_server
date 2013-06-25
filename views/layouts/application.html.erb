@@ -2,11 +2,16 @@
   <body>
     <h1>You're using a layout</h1>
     <p>
+      <% def link_to(name, url)
+          return "<a href='#{url}'>#{name}</a>"
+        end
+      %>
       <h3> I'm a header</h3>
       <p>Put things in the header</p>
       <a href='me.html'>Me</a>
-
+      <a href="http://google.com">This is a link to google</a>
     </p>
+    
     <hr />
     <div>
       <%= yield %>
@@ -14,7 +19,8 @@
     <hr />
     <div>
       <h3> I'm a footer</h3>
-      <p>Put things in the footer</p>
+      <p><%= link_to 'google', 'http://google.com' %></p>
+
     </div>
   </body>
 </html>
